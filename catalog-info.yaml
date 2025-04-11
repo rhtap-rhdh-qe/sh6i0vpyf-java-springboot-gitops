@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sh6i0vpyf-java-springboot-gitops
+  description: This is GitOps manifest for sh6i0vpyf-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=sh6i0vpyf-java-springboot
+    backstage.io/kubernetes-id: sh6i0vpyf-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: sh6i0vpyf-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sh6i0vpyf-java-springboot
